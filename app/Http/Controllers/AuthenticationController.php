@@ -20,12 +20,11 @@ class AuthenticationController extends Controller
         }
 
         $user = Auth::user();
-        $token = $user->createToken('api_token')->plainTextToken;
+        $request->session()->regenerate();
 
         return response()->json([
             'message' => 'Login successful', 
-            'user' => $user,
-            'token' => $token
+            'user' => $user
         ]);
     }
     
