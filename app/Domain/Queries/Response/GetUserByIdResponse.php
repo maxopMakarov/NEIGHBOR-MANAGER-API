@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Commands\Response;
+namespace App\Domain\Queries\Response;
 
 use App\Models\User;
 
@@ -12,7 +12,7 @@ class GetUserByIdResponse
     {
         $this->data = $user;
     }
-    public function getData(): User
+    public function getData(): ?User
     {
         return $this->data;
     }

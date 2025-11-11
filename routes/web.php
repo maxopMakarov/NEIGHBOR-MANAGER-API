@@ -12,6 +12,7 @@ Route::prefix('api')->group(function () {
     Route::prefix('auth')->group(function () {
         Route::post('/register', [AuthenticationController::class, 'register']);
         Route::post('/login', [AuthenticationController::class, 'login']);
+        Route::post('/login-web3', [AuthenticationController::class, 'loginWeb3']);
         Route::post('/logout', [AuthenticationController::class, 'destroy'])->middleware('auth:sanctum');
     });
     Route::middleware('auth:sanctum')->group(function () {

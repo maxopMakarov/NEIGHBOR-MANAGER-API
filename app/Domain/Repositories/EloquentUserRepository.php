@@ -17,6 +17,11 @@ class EloquentUserRepository implements UserRepositoryInterface
         return User::find($id);
     }
 
+    public function findByEthAddress(string $eth_address): ?User
+    {
+        return User::firstWhere('eth_address', $eth_address);
+    }
+
     public function create(array $data): User
     {
         return User::create($data);
